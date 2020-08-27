@@ -6,14 +6,15 @@ import SEO from "../components/seo"
 import Button from "../components/button"
 
 class IndexPage extends React.Component {
-  <Route exact path="/">
-    <Redirect to="/blog" />
-  </Route> 
 
   render() {
     const siteTitle = "Gatsby Starter Personal Website"
 
     return (
+      <Route exact path="/">
+        <Redirect to="/blog" />
+      </Route> 
+      
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title="Home"
