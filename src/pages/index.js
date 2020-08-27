@@ -12,9 +12,7 @@ class IndexPage extends React.Component {
 
     return (
       <>
-      <Route exact path="/">
-        <Redirect to="/blog" />
-      </Route> 
+      <Redirect to="/blog" />
 
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
