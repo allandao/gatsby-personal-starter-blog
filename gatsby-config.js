@@ -9,6 +9,7 @@ module.exports = {
       twitter: `gatsbyjs`,
     },
   },
+  pathPrefix: `/blog`,
   plugins: [
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-styled-components`,
