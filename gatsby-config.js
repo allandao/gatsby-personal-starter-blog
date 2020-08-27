@@ -9,7 +9,7 @@ module.exports = {
       twitter: `gatsbyjs`,
     },
   },
-  pathPrefix: `/blog`,
+  //pathPrefix: `/blog`,
   plugins: [
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-styled-components`,
@@ -17,6 +17,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-netlify`,
     {
       resolve: "gatsby-plugin-local-search",
       options: {
