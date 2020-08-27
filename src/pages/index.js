@@ -1,64 +1,43 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { Link } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Button from "../components/button"
-import SearchPosts from "../components/searchPosts"
 
-class Blog extends React.Component {
+class IndexPage extends React.Component {
+  <Route exact path="/">
+    <Redirect to="/blog" />
+  </Route> 
+
   render() {
-    const { data, navigate, location } = this.props
-    const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMdx.edges
-    const localSearchBlog = data.localSearchBlog
+    const siteTitle = "Gatsby Starter Personal Website"
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="All posts" />
-        <Bio />
-        <SearchPosts
-          posts={posts}
-          localSearchBlog={localSearchBlog}
-          navigate={navigate}
-          location={location}
+        <SEO
+          title="Home"
+          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
-        {/* <Link to="/">
-          <Button marginTop="85px">Go Home</Button>
-        </Link> */}
+        <img style={{ margin: 0 }} src="./GatsbyScene.svg" alt="Gatsby Scene" />
+        <h1>
+          Hey people{" "}
+          <span role="img" aria-label="wave emoji">
+            👋
+          </span>
+        </h1>
+        <p>Welcome to your new Gatsby website. You are on your home page.</p>
+        <p>
+          This starter comes out of the box with styled components and Gatsby's
+          default starter blog running on Netlify CMS.
+        </p>
+        <p>Now go build something great!</p>
+        <Link to="/blog/">
+          <Button marginTop="35px">Go to Blog</Button>
+        </Link>
       </Layout>
     )
   }
 }
 
-export default Blog
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    localSearchBlog {
-      index
-      store
-    }
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
-          }
-        }
-      }
-    }
-  }
-`
+export default IndexPage
