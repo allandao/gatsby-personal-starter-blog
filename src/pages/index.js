@@ -11,9 +11,6 @@ class IndexPage extends React.Component {
     const siteTitle = "Gatsby Starter Personal Website"
 
     return (
-      <>
-      <Redirect to="/blog" />
-
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title="Home"
@@ -36,7 +33,6 @@ class IndexPage extends React.Component {
           <Button marginTop="35px">Go to Blog</Button>
         </Link>
       </Layout>
-      </>
     )
   }
 }
