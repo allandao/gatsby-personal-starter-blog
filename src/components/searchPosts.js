@@ -57,7 +57,7 @@ const SearchedPosts = ({ results }) =>
               marginBottom: rhythm(1 / 4),
             }}
           >
-            <Link style={{ boxShadow: `none` }} to={`/index${slug}`}>
+            <Link style={{ boxShadow: `none` }} to={`/blog${slug}`}>
               {title}
             </Link>
           </h3>
@@ -72,7 +72,7 @@ const SearchedPosts = ({ results }) =>
     })
   ) : (
     <p style={{ textAlign: "center" }}>
-      Sorry, couldn't find any posts matching this search.
+      Sorry, there were no posts matching this search.
     </p>
   )
 
